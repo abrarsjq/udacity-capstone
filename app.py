@@ -5,6 +5,7 @@ from flask_cors import CORS
 from models import setup_db, Actor, Movie
 from auth import AuthError, requires_auth
 
+
 def create_app(test_config=None):
     # configure the app with the endpoints and return it
 
@@ -93,7 +94,6 @@ def create_app(test_config=None):
                         'movie': movie.format(),
                         'movie_id': movie_id})
 
-
     # Endpoint to retrieve all actors
     @app.route('/actors')
     def get_actors():
@@ -171,7 +171,6 @@ def create_app(test_config=None):
         return jsonify({'success': True,
                         'actor': actor.format(),
                         'actor_id': actor_id})
-
 
     @app.errorhandler(404)
     def not_found(error):

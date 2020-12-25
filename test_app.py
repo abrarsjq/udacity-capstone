@@ -25,8 +25,8 @@ actor_sample = {'name': 'Mazin Hayek',
 movie_sample = {'title': 'Queen Gamblit',
                 'release': "12-11-20"}
 
-class TestAgencyAPI(unittest.TestCase):
 
+class TestAgencyAPI(unittest.TestCase):
 
     def setUp(self):
 
@@ -45,10 +45,8 @@ class TestAgencyAPI(unittest.TestCase):
             self.db.drop_all()
             self.db.create_all()
 
-
-
         # inserting these records in the test database
-        # becuase at the initiate will be empty 
+        # becuase at the initiate will be empty
         i = 0
         while i < 5:
             actor = Actor(name=actor_sample['name'],
@@ -59,7 +57,6 @@ class TestAgencyAPI(unittest.TestCase):
                           release=movie_sample['release'])
             movie.insert()
             i += 1
-
 
     def tearDown(self):
         """Executed after reach test"""

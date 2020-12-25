@@ -7,10 +7,11 @@ try:
     database_path = os.environ['DATABASE_URL']
 except:
     database_name = "agency"
-    database_path = "postgresql://{}:{}@{}/{}".format('postgres',
-                                                    'admin',
-                                                    'localhost:5432',
-                                                    database_name)
+    database_path = "postgresql://{}:{}@{}/{}".format(
+        'postgres',
+        'admin',
+        'localhost:5432',
+        database_name)
 db = SQLAlchemy()
 
 
